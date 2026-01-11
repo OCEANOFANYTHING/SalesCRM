@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Lead CRM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Record</h1>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content-wrapper">
+            <!-- Two Column Layout -->
+            <div class="data-grid">
+                <!-- Left Column -->
+                <div class="column">
+                    <div class="field">
+                        <label>Account Name</label>
+                        <div class="value" id="accountName"></div>
+                    </div>
+                    <div class="field">
+                        <label>Account Record Type</label>
+                        <div class="value" id="recordType"></div>
+                    </div>
+                    <div class="field">
+                        <label>Years in Business</label>
+                        <div class="value" id="yearsInBusiness"></div>
+                    </div>
+                    <div class="field">
+                        <label>Primary Contact Mobile Phone</label>
+                        <div class="value link" id="contactMobile"></div>
+                    </div>
+                    <div class="field">
+                        <label>Date of Most Recent Closed-Lost Opp</label>
+                        <div class="value" id="closedLostDate"></div>
+                    </div>
+                    <div class="field">
+                        <label>Last Loss Reason</label>
+                        <div class="value" id="lossReason"></div>
+                    </div>
+                    <div class="field">
+                        <label>Most Recent Annual Gross Sales</label>
+                        <div class="value" id="annualSales"></div>
+                    </div>
+                    <div class="field">
+                        <label>Physical State/Province</label>
+                        <div class="value" id="state"></div>
+                    </div>
+                    <div class="field">
+                        <label>Timezone (Full)</label>
+                        <div class="value" id="timezone"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="column">
+                    <div class="field">
+                        <label>Primary Contact Full Name</label>
+                        <div class="value" id="contactName"></div>
+                    </div>
+                    <div class="field">
+                        <label>Industry</label>
+                        <div class="value" id="industry"></div>
+                    </div>
+                    <div class="field">
+                        <label>Business Phone</label>
+                        <div class="value link" id="businessPhone"></div>
+                    </div>
+                    <div class="field">
+                        <label>Primary Contact Phone</label>
+                        <div class="value link" id="contactPhone"></div>
+                    </div>
+                    <div class="field">
+                        <label>Last CL Rep</label>
+                        <div class="value" id="lastRep"></div>
+                    </div>
+                    <div class="field">
+                        <label>Most Recent Monthly Gross Sales</label>
+                        <div class="value" id="monthlySales"></div>
+                    </div>
+                    <div class="field">
+                        <label>Advisor Notes</label>
+                        <div class="value" id="advisorNotes"></div>
+                    </div>
+                    <div class="field">
+                        <label>Local Time (Short)</label>
+                        <div class="value" id="localTime"></div>
+                    </div>
+                    <div class="field">
+                        <label>Report Record Count</label>
+                        <div class="value" id="recordCount"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Sections -->
+            <div class="collapsible-sections">
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleSection('marketing')">
+                        <span class="arrow" id="arrow-marketing">▶</span>
+                        <span>Marketing Communications</span>
+                    </div>
+                    <div class="collapsible-content" id="marketing">
+                        <p>Marketing communications data would appear here.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleSection('dialer')">
+                        <span class="arrow" id="arrow-dialer">▶</span>
+                        <span>Dialer History</span>
+                    </div>
+                    <div class="collapsible-content" id="dialer">
+                        <p>Dialer history would appear here.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn">
+                    <span class="icon">📝</span>
+                    <span>Notes</span>
+                </button>
+                <button class="action-btn">
+                    <span class="icon">💬</span>
+                    <span>Send Text</span>
+                </button>
+                <button class="action-btn">
+                    <span class="icon">✉️</span>
+                    <span>Send Email</span>
+                </button>
+                <button class="action-btn">
+                    <span class="icon">📋</span>
+                    <span>Send Form</span>
+                </button>
+                <button class="action-btn">
+                    <span class="icon">💼</span>
+                    <span>Create Opportunity</span>
+                </button>
+                <button class="action-btn">
+                    <span class="icon">🚫</span>
+                    <span>Report DNC</span>
+                </button>
+                <button class="action-btn">
+                    <span class="icon">⚠️</span>
+                    <span>Report Duplicate</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer Navigation -->
+        <footer>
+            <button class="footer-btn back-btn">Back to List</button>
+            <div class="timer-container">
+                <span id="countdown"></span>
+            </div>
+            <button class="footer-btn next-btn" id="nextBtn" onclick="nextRecord()">Next Record</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
