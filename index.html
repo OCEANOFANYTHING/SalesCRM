@@ -127,7 +127,7 @@
                     <span class="icon">📝</span>
                     <span>Notes</span>
                 </button>
-                <button class="action-btn">
+                <button class="action-btn" id="sendTextBtn" onclick="openTextModal()">
                     <span class="icon">💬</span>
                     <span>Send Text</span>
                 </button>
@@ -153,6 +153,29 @@
                 </button>
             </div>
         </main>
+
+        <!-- Text Message Modal -->
+        <div id="textModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Send Text Message</h2>
+                    <span class="close" onclick="closeTextModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <textarea id="textMessage" placeholder="Type your message here..." rows="6"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn cancel-btn" onclick="closeTextModal()">Cancel</button>
+                    <button class="modal-btn send-btn" onclick="sendTextMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message">
+            <span class="success-icon">✓</span>
+            <span>Message sent successfully!</span>
+        </div>
 
         <!-- Footer Navigation -->
         <footer>
