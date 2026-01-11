@@ -347,3 +347,44 @@ async function init() {
 
 // Run initialization when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', init);
+
+// Text Message Modal Functions
+function openTextModal() {
+    const modal = document.getElementById('textModal');
+    modal.style.display = 'flex';
+    document.getElementById('textMessage').value = ''; // Clear previous text
+}
+
+function closeTextModal() {
+    const modal = document.getElementById('textModal');
+    modal.style.display = 'none';
+}
+
+function sendTextMessage() {
+    const messageText = document.getElementById('textMessage').value.trim();
+    
+    if (messageText === '') {
+        alert('Please enter a message before sending.');
+        return;
+    }
+    
+    // Close the modal
+    closeTextModal();
+    
+    // Show success message
+    const successMessage = document.getElementById('successMessage');
+    successMessage.classList.add('show');
+    
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+        successMessage.classList.remove('show');
+    }, 3000);
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('textModal');
+    if (event.target === modal) {
+        closeTextModal();
+    }
+}
